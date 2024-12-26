@@ -1,0 +1,9 @@
+.env
+.vscode
+serviceAccount.json
+serviceAccount2.json
+serviceAccount3.json
+serviceAccount4.json
+envDev.txt
+envProd.txt
+docker-compose.yml
