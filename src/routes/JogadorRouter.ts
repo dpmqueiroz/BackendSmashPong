@@ -1,5 +1,5 @@
 import { Router } from "express";
-import JogadorController from "../controller/JogadorController";
+import { JogadorController } from "../controller/JogadorController";
 
 export default function JogadorRouter(router: Router) {
 

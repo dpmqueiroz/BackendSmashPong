@@ -13,13 +13,72 @@ generator client {
   provider = "prisma-client-js"
 }
 
+model Role {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  atletaId          String  
+  function          String
+
+  @@map("role")
+}
+
 model Jogador {
-  id        String @id @default(auto()) @map("_id") @db.ObjectId
-  email     String  
-  nome   String
-  nickname String
-  urlFoto String
-  createdAt DateTime @default(now())
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  email             String  
+  nome              String
+  nickname          String
+  urlFoto           String
+  createdAt         DateTime @default(now())
 
   @@map("jogador")
 }
+
+model Destaques {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  posicao           String
+  nome              String
+  nickname          String
+  urlFoto           String
+  motivo            String
+  createdAt         DateTime @default(now())
+
+  @@map("destaque")
+}
+
+model Jogos {
+  id                String @id @default(auto()) @map("_id") @db.ObjectId
+  season            String
+  j1Id              String
+  j2Id              String
+  j1FS              Int
+  j2FS              Int
+  j1SS              Int
+  j2SS              Int
+  j1TS              Int
+  j2TS              Int
+  j1SW              Int
+  j2SW              Int
+  j1SL              Int
+  j2SL              Int
+  aprovacaoP2       String
+  aprovacaoAdm      String
+  createdAt         DateTime @default(now())
+
+  @@map("jogos")
+}
+
+
+
+// model Ranking {
+//   id                String @id @default(auto()) @map("_id") @db.ObjectId
+//   atleta            String
+//   atletaId          String
+//   pontos            Int
+//   jogos             Int
+//   vitorias          Int
+//   derrotas          Int
+//   setsVencidos      Int
+//   setsPerdidos      Int
+//   createdAt         DateTime @default(now())
+
+//   @@map("ranking")
+// }

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { JogadorService } from "../service/JogadorService";
 
-export default async function JogadorController (request: Request, response: Response) :Promise<any> {
+export async function JogadorController (request: Request, response: Response) :Promise<any> {
     try {
         const jogadorService: JogadorService = new JogadorService();
         let jogador = jogadorService.createJogador({
